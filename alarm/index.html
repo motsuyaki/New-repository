@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json"> <!-- PWAÝ’è -->
+</head>
+<body>
+    <h1>Current Time</h1>
+    <p id="clock">Loading...</p>
+    <button onclick="setAlarm()">Set Alarm</button>
+    
+    <script src="script.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js')
+              .then(() => console.log('Service Worker Registered'));
+      }
+  </script>
+</body>
+</html>
